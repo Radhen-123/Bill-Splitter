@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bill Splitter</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <!-- Minified Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="navigation">
+        <ul>
+          <li class="list">
+            <b></b>
+            <b></b>
+            <a href="index.html">
+              <span class="icon"
+                ><ion-icon name="home-outline"></ion-icon
+              ></span>
+              <span class="title">Home</span>
+            </a>
+          </li>
+          <li class="list">
+            <b></b>
+            <b></b>
+            <a href="billsplit.html">
+              <span class="icon"><ion-icon name="logo-usd"></ion-icon></span>
+              <span class="title">Bill Split</span>
+            </a>
+          </li>
+          <li class="list">
+            <b></b>
+            <b></b>
+            <a href="tipcalc.html">
+              <span class="icon"
+                ><ion-icon name="calculator-outline"></ion-icon
+              ></span>
+              <span class="title">Tip Calculator</span>
+            </a>
+          </li>
+          <li class="list">
+            <b></b>
+            <b></b>
+            <a href="payments.html">
+              <span class="icon"
+                ><ion-icon name="card-outline"></ion-icon
+              ></span>
+              <span class="title">My Payments</span>
+            </a>
+          </li>
+          <li class="list">
+            <b></b>
+            <b></b>
+            <a href="groups.html">
+              <span class="icon"
+                ><ion-icon name="people-outline"></ion-icon
+              ></span>
+              <span class="title">Groups</span>
+            </a>
+          </li>
+          <li class="list active">
+            <b></b>
+            <b></b>
+            <a href="currency.html">
+              <span class="icon"
+                ><ion-icon name="layers-outline"></ion-icon
+              ></span>
+              <span class="title">Currency</span>
+            </a>
+          </li>
+
+          <section>
+            <p>
+              <a
+                href="https://github.com/ChrisMys/COMP1073-Bill-Splitter"
+                target="_blank"
+                ><ion-icon name="logo-github"></ion-icon
+              ></a>
+            </p>
+          </section>
+        </ul>
+      </div>
+    </header>
+
+    <div class="pg-currency section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1 class="text-center"><span>Currency</span> Conversion</h1>
+
+            <fieldset>
+              <div class="form-group">
+                <input type="number" />
+                <select id="currencyOne">
+                  <option value="currency">Currency</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <input type="number" />
+                <select>
+                  <option value="currency">Currency</option>
+                </select>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toggle">
+      <ion-icon name="menu-outline" class="open"></ion-icon>
+      <ion-icon name="close-outline" class="closed"></ion-icon>
+    </div>
+
+    <!-- Script needed for trhe navigation icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- Main javascript files -->
+    <script src="js/main.js"></script>
+    <script src="js/currency.js"></script>
+    
+  </body>
+</html>

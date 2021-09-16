@@ -1,0 +1,475 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+html {
+  font-size: 62.5%;
+}
+.section-padding {
+  padding: 40px 0 0;
+}
+
+:root {
+  --foreground-clr: #000;
+  --background-clr: #fff;
+  --accent-clr: #d08504;
+  --headings-clr: #29407c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--background-clr);
+  font-size: 1.8rem;
+}
+
+.navigation {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: 70px;
+  background: var(--foreground-clr);
+  border-left: 5px solid var(--foreground-clr);
+  box-sizing: initial;
+  transition: width 0.5s;
+  overflow-x: hidden;
+}
+
+.navigation.active {
+  width: 250px;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 5px;
+  padding-top: 40px;
+}
+
+.navigation ul li {
+  position: relative;
+  list-style: none;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.navigation ul li b:nth-child(1) {
+  position: absolute;
+  top: -20px;
+  height: 20px;
+  width: 100%;
+  background: var(--background-clr);
+  display: none;
+}
+
+.navigation ul li b:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--foreground-clr);
+  border-bottom-right-radius: 20px;
+}
+
+.navigation ul li b:nth-child(2) {
+  position: absolute;
+  bottom: -20px;
+  height: 20px;
+  width: 100%;
+  background: var(--background-clr);
+  display: none;
+}
+
+.navigation ul li b:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--foreground-clr);
+  border-top-right-radius: 20px;
+}
+
+.navigation ul li.active b:nth-child(1),
+.navigation ul li.active b:nth-child(2) {
+  display: block;
+}
+
+.navigation ul li.active {
+  background: var(--background-clr);
+}
+
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+  color: #fff;
+}
+
+.navigation ul li.active a {
+  color: #333;
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 70px;
+  text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+  font-size: 2.4rem;
+}
+
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  padding-left: 10px;
+  height: 55px;
+  line-height: 55px;
+  white-space: normal;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: var(--foreground-clr);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle ion-icon {
+  position: absolute;
+  color: #fff;
+  font-size: 3.4rem;
+  display: none;
+}
+
+.navigation section ion-icon {
+  color: #fff;
+  font-size: 3.4rem;
+  transition: all 0.3s;
+}
+
+.navigation section ion-icon:not(.not-btn):hover,
+.navigation section ion-icon:not(.not-btn):focus {
+  cursor: pointer;
+  transition: all 0.3s;
+  opacity: 0.7;
+}
+
+.toggle.active {
+  background: #ff4d89;
+}
+
+.toggle ion-icon.open,
+.toggle.active ion-icon.closed {
+  display: block;
+}
+
+.toggle ion-icon.closed,
+.toggle.active ion-icon.open {
+  display: none;
+}
+
+.navigation section {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.navigation section p {
+  text-align: center;
+  padding-right: 45px;
+}
+
+.pg-home h1,
+.pg-currency h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+}
+
+.pg-home h1 span,
+.pg-currency h1 span {
+  color: var(--accent-clr);
+}
+
+.pg-home h2 {
+  color: var(--headings-clr);
+  padding-bottom: 20px;
+}
+
+.pg-home ul {
+  list-style: none;
+}
+
+.pg-home section {
+  margin-bottom: 30px;
+}
+
+.fancy-list li {
+  padding: 0 0 5px 45px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.fancy-list li i {
+  position: absolute;
+  left: 10px;
+  color: var(--accent-clr);
+}
+
+.form-group:nth-child(1),
+.form-group:nth-child(3),
+.form-group:nth-child(4),
+.form-group:nth-child(6),
+.form-group:nth-child(7) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-group:nth-child(1) input,
+.form-group:nth-child(3) input,
+.form-group:nth-child(4) input,
+.form-group:nth-child(6) input,
+.form-group:nth-child(7) select {
+  width: 50%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  font-size: 1.5rem;
+  color: #000;
+  padding: 5px;
+}
+
+.pg-currency .form-group select {
+  width: 15%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  font-size: 1.5rem;
+  color: #000;
+  padding: 5px;
+}
+
+.form-group input:hover,
+.form-group input:focus,
+.form-group select:hover,
+.form-group select:focus {
+  cursor: pointer;
+  border: 2px solid var(--headings-clr);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label:first-of-type {
+  color: var(--headings-clr);
+  font-weight: 500;
+  position: relative;
+
+  padding-bottom: 5px;
+}
+
+.form-group:nth-child(2) label:first-of-type,
+.form-group:nth-child(5) label:first-of-type {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.form-group label:first-of-type:after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  background: var(--accent-clr);
+  bottom: 0;
+  left: 0;
+}
+
+fieldset {
+  padding: 40px;
+  border-radius: 30px;
+  border-color: var(--accent-clr);
+  margin-bottom: 30px;
+}
+
+.form-group button {
+  background-color: var(--headings-clr);
+  border: none;
+  color: #fff;
+  padding: 15px 30px;
+  display: block;
+  margin: 60px auto 0;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.form-group p a {
+  background-color: var(--headings-clr);
+  border: none;
+  color: #fff;
+  padding: 15px 30px;
+  display: inline-block;
+  margin: 60px auto 0;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.form-group button:hover,
+.form-group button:focus {
+  transition: all 0.3s;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+#tip input,
+#group input {
+  margin-right: 30px;
+  display: inline-block;
+}
+
+.tip-amount,
+.tip-percentage,
+.new-group,
+.old-group {
+  display: none !important;
+}
+
+.tip-amount.active,
+.tip-percentage.active,
+.new-group.active,
+.old-group.active {
+  display: flex !important;
+}
+
+.userInfo ion-icon {
+  font-size: 50px;
+  padding: 5px;
+  color: var(--headings-clr);
+}
+
+.userInfo li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 2rem;
+  padding: 0 5px;
+}
+
+.userInfo li span {
+  font-size: 1.8rem;
+}
+
+.userInfo li:nth-child(2n + 1) {
+  background: #e1e1e1;
+  border-radius: 10px;
+}
+
+.payments-section .form-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pg-currency .form-group {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.payments-section .form-group input,
+.groups-section .form-group input,
+.pg-currency .form-group input {
+  width: 50%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  font-size: 1.5rem;
+  color: #000;
+  padding: 5px;
+}
+
+.payments-section .form-group label:first-of-type {
+  color: var(--headings-clr);
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px;
+  margin-bottom: 0px;
+}
+
+.payments-section .form-group {
+  width: 33%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.payments-section .form-group:nth-child(4) {
+  width: 100%;
+}
+
+.payments-section .form-group button,
+.groups-section .form-group button {
+  margin: 30px auto 0;
+}
+
+.groups-section .form-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.groups-section .form-group select,
+.groups-section .form-group input {
+  width: 50%;
+}
+
+.groups-section .form-group {
+  display: none;
+}
+
+.groups-section .form-group.active {
+  display: flex;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@media (max-width: 1199px) {
+
+  .pg-section {
+    padding: 40px 90px;
+  }
+
+}
